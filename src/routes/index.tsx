@@ -113,23 +113,25 @@ function ScrollSyncedPill() {
   }, []);
 
   return (
-    <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
-      <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-      {items.map((it, i) => (
-        <span key={it.label} className="flex items-center gap-3">
-          {i > 0 && <span className="text-white/15">·</span>}
-          <span
-            className="transition-all duration-500"
-            style={
-              active === i
-                ? { color: "oklch(0.99 0.005 250)", textShadow: "0 0 12px var(--accent)" }
-                : { color: "oklch(0.55 0.03 265)" }
-            }
-          >
-            {it.label}
+    <span className="relative inline-flex rounded-full overflow-hidden p-[1px] revolving-glow">
+      <span className="relative z-10 inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
+        <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
+        {items.map((it, i) => (
+          <span key={it.label} className="flex items-center gap-3">
+            {i > 0 && <span className="text-white/15">·</span>}
+            <span
+              className="transition-all duration-500"
+              style={
+                active === i
+                  ? { color: "oklch(0.99 0.005 250)", textShadow: "0 0 12px var(--accent)" }
+                  : { color: "oklch(0.55 0.03 265)" }
+              }
+            >
+              {it.label}
+            </span>
           </span>
-        </span>
-      ))}
+        ))}
+      </span>
     </span>
   );
 }
