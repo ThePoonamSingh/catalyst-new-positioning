@@ -100,10 +100,10 @@ function Hero() {
 
         <Reveal delay={80}>
           <h1 className="mt-8 text-center font-display font-black tracking-[-0.04em] text-[clamp(2.75rem,8vw,6rem)] leading-[0.95]">
-            <span className="text-gradient">Everything Between</span>
+            <span className="text-gradient">Everything from</span>
             <br />
             <span className="text-gradient-emerald">Prompt</span>
-            <span className="text-gradient"> and </span>
+            <span className="text-gradient"> to </span>
             <span className="text-gradient-purple">Production.</span>
           </h1>
         </Reveal>
