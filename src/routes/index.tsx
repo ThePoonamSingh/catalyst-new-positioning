@@ -95,31 +95,6 @@ export function Nav() {
             </div>
           </div>
           <div className="relative group">
-            <Link to="/platform" className="hover:text-foreground transition inline-flex items-center gap-1">
-              Platform
-              <svg className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </Link>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/10 py-2 px-1 min-w-[10rem]">
-                <Link
-                  to="/why-catalyst"
-                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
-                >
-                  <span>Why Catalyst</span>
-                </Link>
-                <a
-                  href="https://writer.zoho.in/writer/open/wue3r4d9c70e11c844d218704ac4fec179b30"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
-                >
-                  <span>Zero bandwidth fees</span>
-                  <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="relative group">
             <a href="/#agents" className="hover:text-foreground transition inline-flex items-center gap-1">
               Agents
               <svg className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -147,8 +122,33 @@ export function Nav() {
               </div>
             </div>
           </div>
-          <a href="/#stack" className="hover:text-foreground transition">Stack</a>
+          <div className="relative group">
+            <Link to="/platform" className="hover:text-foreground transition inline-flex items-center gap-1">
+              Platform
+              <svg className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </Link>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/10 py-2 px-1 min-w-[10rem]">
+                <Link
+                  to="/why-catalyst"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
+                >
+                  <span>Why Catalyst</span>
+                </Link>
+                <a
+                  href="https://writer.zoho.in/writer/open/wue3r4d9c70e11c844d218704ac4fec179b30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
+                >
+                  <span>Zero bandwidth fees</span>
+                  <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
           <a href="/#docs" className="hover:text-foreground transition">Docs</a>
+          <a href="/#stack" className="hover:text-foreground transition">Stack</a>
         </nav>
         <div className="flex items-center gap-3">
           <a href="#" className="hidden sm:inline text-sm text-muted-foreground hover:text-foreground transition">Sign in</a>
