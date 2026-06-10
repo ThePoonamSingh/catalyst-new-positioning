@@ -66,6 +66,35 @@ export function Nav() {
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <div className="relative group">
+            <a href="https://catalyst.zoho.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition inline-flex items-center gap-1">
+              Services
+              <svg className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/10 py-2 px-1 min-w-[10rem]">
+                {[
+                  { label: "Why Catalyst", href: "https://catalyst.zoho.com/why-catalyst.html" },
+                  { label: "Platform", href: "https://catalyst.zoho.com/platform.html" },
+                  { label: "Solutions", href: "https://catalyst.zoho.com/solutions.html" },
+                  { label: "Customers", href: "https://catalyst.zoho.com/customers.html" },
+                  { label: "Pricing", href: "https://catalyst.zoho.com/pricing.html" },
+                  { label: "Resources", href: "https://catalyst.zoho.com/resources.html" },
+                ].map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
+                  >
+                    <span>{item.label}</span>
+                    <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="relative group">
             <Link to="/platform" className="hover:text-foreground transition inline-flex items-center gap-1">
               Platform
               <svg className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -120,35 +149,6 @@ export function Nav() {
           </div>
           <a href="/#stack" className="hover:text-foreground transition">Stack</a>
           <a href="/#docs" className="hover:text-foreground transition">Docs</a>
-          <div className="relative group">
-            <a href="https://catalyst.zoho.com/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition inline-flex items-center gap-1">
-              Services
-              <svg className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-            </a>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/10 py-2 px-1 min-w-[10rem]">
-                {[
-                  { label: "Why Catalyst", href: "https://catalyst.zoho.com/why-catalyst.html" },
-                  { label: "Platform", href: "https://catalyst.zoho.com/platform.html" },
-                  { label: "Solutions", href: "https://catalyst.zoho.com/solutions.html" },
-                  { label: "Customers", href: "https://catalyst.zoho.com/customers.html" },
-                  { label: "Pricing", href: "https://catalyst.zoho.com/pricing.html" },
-                  { label: "Resources", href: "https://catalyst.zoho.com/resources.html" },
-                ].map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
-                  >
-                    <span>{item.label}</span>
-                    <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
         </nav>
         <div className="flex items-center gap-3">
           <a href="#" className="hidden sm:inline text-sm text-muted-foreground hover:text-foreground transition">Sign in</a>
