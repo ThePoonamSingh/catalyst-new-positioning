@@ -86,7 +86,7 @@ function Nav() {
 /* ---------- Hero ---------- */
 function Hero() {
   return (
-    <section className="relative bg-hero">
+    <section id="prompt" className="relative bg-hero">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
