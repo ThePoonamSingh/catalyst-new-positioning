@@ -513,23 +513,9 @@ function FoldFive() {
   const stack = ["Frontend", "Backend", "Data", "AI", "Workflows", "Deployment"];
   return (
     <section className="relative py-28 sm:py-36 border-t border-border/60">
-      <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <Reveal>
-          <div>
-            <h2 className="text-4xl sm:text-6xl font-black tracking-[-0.035em] leading-[1.02]">
-              One Platform.
-              <br />
-              <span className="text-gradient-purple">Every Layer.</span>
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground max-w-md">
-              From frontend to deployment, every layer connects into a single Catalyst platform core —
-              one runtime, one mental model, one bill.
-            </p>
-          </div>
-        </Reveal>
-
+      <div className="mx-auto max-w-7xl px-6 flex justify-center">
         <Reveal delay={120}>
-          <div className="relative">
+          <div className="relative w-full max-w-lg">
             <div className="absolute inset-0 bg-cta-gradient opacity-20 blur-3xl rounded-full" />
             <div className="relative space-y-3">
               {stack.map((s, i) => (
