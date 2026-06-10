@@ -482,28 +482,54 @@ function FoldThree() {
 /* ---------- Fold 4: Why ---------- */
 function FoldFour() {
   const items = [
-    { t: "Ship Faster", d: "Move from idea to production without assembling infrastructure.", icon: "→" },
-    { t: "Operate Simpler", d: "One platform instead of six disconnected services.", icon: "◇" },
-    { t: "Scale Confidently", d: "Built-in deployment, monitoring, security, and reliability.", icon: "△" },
-    { t: "Agent-Ready", d: "Infrastructure AI can discover, configure, and operate.", icon: "✦" },
+    {
+      label: "01 / ZERO LEARNING CURVE",
+      t: "Prompt what you're building. The AI figures out the rest.",
+      d: "The AI already knows the platform. You don't have to. Every Catalyst service, every integration, every configuration — already understood by the AI. Describe what you're building. It selects the right components, wires them, and provisions everything. You never learn the platform. It learns your project.",
+      proof: "No services to memorize. No infrastructure to stitch together. No learning curve standing between an idea and a working application.",
+    },
+    {
+      label: "02 / PROMPT-FIRST",
+      t: "From idea to running application without touching a config file.",
+      d: "AWS hands you 200 services and a getting-started guide. Catalyst gives you one prompt and a running application. No IAM roles. No VPC spelunking. No certification required. The platform handles what the platform should handle.",
+      proof: "First deploy in 47 seconds · Zero config files",
+    },
+    {
+      label: "03 / MCP-NATIVE",
+      t: "Your agent workflows run on the same infra as your application.",
+      d: "Most platforms bolt AI on as an afterthought. Catalyst is built with MCP as a first-class protocol — so your agents can discover, configure, and operate infrastructure the same way a developer would. No brittle glue code. No separate runtime. One platform for both.",
+      proof: "Agents deploy, observe, and scale natively",
+    },
+    {
+      label: "04 / FULL-STACK, TRULY",
+      t: "Stop maintaining the stack. Start building the product.",
+      d: "You didn't sign up to maintain Vercel, Supabase, Railway, and three other services just to run one application. Catalyst is one platform — frontend, backend, data, AI, workflows, deployment — built to work together as a system, not a collection.",
+      proof: "One API · One bill · One dashboard · One deployment",
+    },
   ];
   return (
     <section id="why" className="relative py-28 sm:py-36 border-t border-border/60">
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
-          <h2 className="text-4xl sm:text-5xl font-black tracking-[-0.03em] max-w-2xl">
-            Why teams choose <span className="text-gradient-emerald">Catalyst</span>.
+          <div className="text-xs font-mono tracking-[0.2em] text-muted-foreground uppercase">
+            What makes Catalyst different
+          </div>
+          <h2 className="mt-4 text-4xl sm:text-5xl font-black tracking-[-0.03em] max-w-3xl">
+            The things no other cloud platform can say.
           </h2>
         </Reveal>
         <div className="mt-14 grid sm:grid-cols-2 gap-5">
           {items.map((it, i) => (
             <Reveal key={it.t} delay={i * 90}>
-              <div className="glass rounded-2xl p-8 h-full hover:bg-white/[0.05] transition relative overflow-hidden">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-2xl font-semibold tracking-tight">{it.t}</h3>
-                  <span className="grid place-items-center h-9 w-9 rounded-lg bg-primary/15 text-primary">{it.icon}</span>
+              <div className="glass rounded-2xl p-8 h-full hover:bg-white/[0.05] transition relative overflow-hidden flex flex-col">
+                <div className="text-[11px] font-mono tracking-[0.18em] text-primary/80 uppercase">
+                  {it.label}
                 </div>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight leading-snug">{it.t}</h3>
                 <p className="mt-4 text-muted-foreground leading-relaxed">{it.d}</p>
+                <p className="mt-6 pt-6 border-t border-border/60 text-sm text-foreground/80 leading-relaxed">
+                  <span className="text-primary mr-2">→</span>{it.proof}
+                </p>
               </div>
             </Reveal>
           ))}
