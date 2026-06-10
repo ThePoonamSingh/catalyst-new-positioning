@@ -91,53 +91,62 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.18em] text-muted-foreground glass px-3.5 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground border border-white/10 bg-white/[0.03] backdrop-blur-sm px-3 py-1 rounded-full">
               <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-              Developer-native · Agent-ready · Production-grade
+              The Agent-Ready Infrastructure
             </span>
           </div>
         </Reveal>
 
         <Reveal delay={80}>
-          <h1 className="mt-8 text-center font-display font-black tracking-[-0.04em] text-[clamp(2.75rem,8vw,6rem)] leading-[0.95]">
-            <span className="text-gradient">Everything from</span>
+          <h1 className="mt-10 text-center font-display font-extrabold tracking-[-0.045em] text-[clamp(2.75rem,8.5vw,6.5rem)] leading-[1.02] text-foreground">
+            Everything from
             <br />
-            <span className="text-gradient-emerald">Prompt</span>
-            <span className="text-gradient"> to </span>
-            <span className="text-gradient-purple">Production.</span>
+            <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,var(--purple)_0%,var(--emerald)_100%)]">
+              Prompt to Production
+            </span>
           </h1>
         </Reveal>
 
         <Reveal delay={160}>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            AI can write code. It still can't ship a finished product. Databases, authentication,
-            workflows, deployment, observability, scaling, security — those are still your
-            responsibility. <span className="text-foreground">Catalyst closes that gap, so what your AI builds actually runs.</span>
+          <p className="mx-auto mt-8 max-w-2xl text-center text-lg sm:text-xl text-muted-foreground font-light leading-relaxed">
+            Developer-native <span className="mx-2 text-white/15">/</span>
+            Agent-ready <span className="mx-2 text-white/15">/</span>
+            Production-grade
+          </p>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-base text-muted-foreground/80 leading-relaxed">
+            AI can write code. It still can't ship a finished product. Catalyst closes the gap between what your agents
+            generate and what actually runs in production — databases, auth, workflows, deployment, observability.
           </p>
         </Reveal>
 
         <Reveal delay={240}>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#cta" className="group relative inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-cta-gradient text-background font-semibold ring-glow-emerald hover:scale-[1.02] transition">
-              Start with a Prompt
+            <a
+              href="#cta"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-white text-black font-semibold hover:shadow-[0_0_28px_-4px_rgba(255,255,255,0.25)] transition"
+            >
+              Initialize Platform
               <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
             </a>
-            <a href="#demo" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass text-foreground hover:bg-white/5 transition">
-              <span className="grid place-items-center h-6 w-6 rounded-full bg-foreground/10">▸</span>
-              Watch Demo
+            <a
+              href="#docs"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-white/[0.02] text-foreground border border-white/10 hover:bg-white/[0.05] transition font-mono text-sm"
+            >
+              Read Documentation
             </a>
           </div>
         </Reveal>
 
-        {/* Flow visual */}
+        {/* Terminal hero artifact */}
         <Reveal delay={320}>
-          <HeroFlow />
+          <HeroTerminal />
         </Reveal>
 
         {/* Trust strip */}
         <Reveal delay={420}>
-          <div className="mt-20 border-t border-border/60 pt-8">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs sm:text-sm tracking-[0.18em] uppercase text-muted-foreground">
+          <div className="mt-20 border-t border-white/[0.06] pt-8">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-muted-foreground/70">
               {["Backend","Data","Auth","Workflows","AI","MCP","Deployment","Observability"].map((t) => (
                 <span key={t} className="flex items-center gap-3">
                   <span className="h-1 w-1 rounded-full bg-primary/60" /> {t}
@@ -148,6 +157,46 @@ function Hero() {
         </Reveal>
       </div>
     </section>
+  );
+}
+
+function HeroTerminal() {
+  return (
+    <div className="mt-20 mx-auto w-full max-w-3xl rounded-xl border border-white/10 bg-black/40 backdrop-blur-xl p-1 overflow-hidden">
+      <div className="w-full bg-[oklch(0.04_0_0)] rounded-[10px] border border-white/[0.06]">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06] bg-white/[0.015]">
+          <div className="flex gap-2">
+            <div className="w-2 h-2 rounded-full bg-zinc-800" />
+            <div className="w-2 h-2 rounded-full bg-zinc-800" />
+            <div className="w-2 h-2 rounded-full bg-zinc-800" />
+          </div>
+          <div className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-[0.22em]">
+            agent_workflow.yaml
+          </div>
+          <div className="w-10" />
+        </div>
+        <div className="p-6 sm:p-7 text-left font-mono text-[13px] sm:text-sm leading-[1.85]">
+          {[
+            { n: "01", key: "agent:", val: "customer-intelligence" },
+            { n: "02", key: "role:", val: "autonomous-researcher" },
+            { n: "03", key: "runtime:", val: "catalyst-edge-v4" },
+            { n: "04", key: "stack:", val: "[ db, auth, workflows, mcp ]" },
+            { n: "05", key: "deploy:", val: "us-east · eu-west · ap-south" },
+          ].map((l) => (
+            <div key={l.n} className="flex gap-5">
+              <span className="text-white/15 select-none">{l.n}</span>
+              <span className="text-foreground/90">
+                <span className="text-accent">{l.key}</span> {l.val}
+              </span>
+            </div>
+          ))}
+          <div className="flex gap-5 mt-3">
+            <span className="text-white/15 select-none">06</span>
+            <span className="inline-block w-2 h-4 align-middle bg-primary cursor-blink" />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
