@@ -109,11 +109,6 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={160}>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-lg sm:text-xl text-muted-foreground font-light leading-relaxed">
-            Developer-native <span className="mx-2 text-white/15">/</span>
-            Agent-ready <span className="mx-2 text-white/15">/</span>
-            Production-grade
-          </p>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base text-muted-foreground/80 leading-relaxed">
             AI can write code. It still can't ship a finished product. Catalyst closes the gap between what your agents
             generate and what actually runs in production — databases, auth, workflows, deployment, observability.
