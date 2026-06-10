@@ -117,10 +117,10 @@ export function Nav() {
 /* ---------- Hero ---------- */
 function EyebrowPill() {
   return (
-    <span className="relative inline-flex rounded-full overflow-hidden p-[1px] revolving-glow">
-      <span className="relative z-10 inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
-        <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-        <span className="glow-text-pulse font-semibold">
+    <span className="relative inline-flex rounded-full overflow-hidden p-[1.5px] revolving-glow">
+      <span className="relative z-10 inline-flex items-center gap-3 font-mono text-[12px] sm:text-[14px] uppercase tracking-[0.18em] bg-white/[0.04] backdrop-blur-sm px-5 py-2 rounded-full">
+        <span className="h-2 w-2 rounded-full bg-primary pulse-glow" />
+        <span className="glow-text-pulse font-bold">
           Everything from Prompt to Production
         </span>
       </span>
