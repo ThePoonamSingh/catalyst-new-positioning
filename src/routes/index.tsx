@@ -574,7 +574,7 @@ function FinalCTA() {
 }
 
 /* ---------- Footer ---------- */
-function Footer() {
+export function Footer() {
   return (
     <footer className="border-t border-border/60 py-12">
       <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
