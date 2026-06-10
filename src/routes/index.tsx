@@ -93,7 +93,7 @@ function Hero() {
           <div className="flex justify-center">
             <span className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.18em] text-muted-foreground glass px-3.5 py-1.5 rounded-full">
               <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-              Prompt-first · Agent-ready · Production-grade
+              Developer-native · Agent-ready · Production-grade
             </span>
           </div>
         </Reveal>
