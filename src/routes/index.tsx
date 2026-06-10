@@ -21,7 +21,6 @@ function Index() {
       <FoldTwo />
       <FoldThree />
       <FoldFour />
-      <FoldFive />
       <FinalCTA />
       <Footer />
     </main>
