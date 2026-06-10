@@ -438,8 +438,7 @@ function FoldThree() {
         <Reveal>
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-4xl sm:text-6xl font-black tracking-[-0.035em] leading-[1.02]">
-              The <span className="text-gradient-purple">Agent-Ready</span>
-              <br />Full-Stack Cloud.
+              One platform.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
               Build, deploy, and operate any application using compute, relational data, authentication,
@@ -559,7 +558,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <span className="h-6 w-6 rounded-md bg-cta-gradient grid place-items-center text-[10px] font-black text-background">C</span>
-          <span>© {new Date().getFullYear()} Catalyst — The Agent-Ready Full-Stack Cloud.</span>
+          <span>© {new Date().getFullYear()} Catalyst — One platform.</span>
         </div>
         <div className="flex items-center gap-6">
           <a href="#" className="hover:text-foreground transition">Docs</a>
