@@ -293,7 +293,7 @@ function FoldTwo() {
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
         <Reveal>
           <div>
-            <span className="text-xs uppercase tracking-[0.2em] text-primary">For humans · For agents</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-primary">Developers in control. Agents in the stack.</span>
             <h2 className="mt-4 text-4xl sm:text-5xl font-black tracking-[-0.03em] leading-[1.05]">
               Built for Developers.
               <br />
