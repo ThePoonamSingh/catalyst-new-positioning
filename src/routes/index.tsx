@@ -245,39 +245,89 @@ function Hero() {
 }
 
 function HeroTerminal() {
+  const stack = [
+    "PostgreSQL Database",
+    "Authentication",
+    "Functions",
+    "Workflows",
+    "AI Models",
+    "MCP Endpoints",
+    "Deployment",
+  ];
   return (
-    <div className="mt-20 mx-auto w-full max-w-3xl rounded-xl border border-white/10 bg-black/40 backdrop-blur-xl p-1 overflow-hidden">
-      <div className="w-full bg-[oklch(0.04_0_0)] rounded-[10px] border border-white/[0.06]">
-        <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.06] bg-white/[0.015]">
-          <div className="flex gap-2">
-            <div className="w-2 h-2 rounded-full bg-zinc-800" />
-            <div className="w-2 h-2 rounded-full bg-zinc-800" />
-            <div className="w-2 h-2 rounded-full bg-zinc-800" />
-          </div>
-          <div className="font-mono text-[10px] text-muted-foreground/60 uppercase tracking-[0.22em]">
-            agent_workflow.yaml
-          </div>
-          <div className="w-10" />
+    <div className="mt-20 mx-auto w-full max-w-3xl text-left">
+      {/* Step 1 — Prompt */}
+      <div className="rounded-xl border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-white/[0.015]">
+          <span className="font-mono text-[10px] text-muted-foreground/70 uppercase tracking-[0.22em]">
+            Prompt
+          </span>
+          <span className="font-mono text-[10px] text-muted-foreground/40 uppercase tracking-[0.22em]">
+            you
+          </span>
         </div>
-        <div className="p-6 sm:p-7 text-left font-mono text-[13px] sm:text-sm leading-[1.85]">
-          {[
-            { n: "01", key: "agent:", val: "customer-intelligence" },
-            { n: "02", key: "role:", val: "autonomous-researcher" },
-            { n: "03", key: "runtime:", val: "catalyst-edge-v4" },
-            { n: "04", key: "stack:", val: "[ db, auth, workflows, mcp ]" },
-            { n: "05", key: "deploy:", val: "us-east · eu-west · ap-south" },
-          ].map((l) => (
-            <div key={l.n} className="flex gap-5">
-              <span className="text-white/15 select-none">{l.n}</span>
-              <span className="text-foreground/90">
-                <span className="text-accent">{l.key}</span> {l.val}
+        <div className="p-5 sm:p-6 font-mono text-[13px] sm:text-sm leading-[1.7]">
+          <span className="text-primary mr-2">{">"}</span>
+          <span className="text-foreground/90">
+            Build a customer intelligence platform that analyzes support tickets and sends weekly churn-risk reports.
+          </span>
+          <span className="cursor-blink ml-1 inline-block w-2 h-4 align-middle bg-primary" />
+        </div>
+      </div>
+
+      {/* Connector */}
+      <div className="flex justify-center py-3">
+        <div className="h-6 w-px bg-gradient-to-b from-white/0 via-white/20 to-white/0" />
+      </div>
+
+      {/* Step 2 — Catalyst provisions */}
+      <div className="rounded-xl border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-white/[0.015]">
+          <span className="font-mono text-[10px] text-muted-foreground/70 uppercase tracking-[0.22em]">
+            Catalyst provisions
+          </span>
+          <span className="font-mono text-[10px] text-accent/80 uppercase tracking-[0.22em]">
+            assembling
+          </span>
+        </div>
+        <div className="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 font-mono text-[13px]">
+          {stack.map((item, i) => (
+            <div
+              key={item}
+              className="flex items-center gap-3 reveal-in"
+              style={{ animationDelay: `${i * 90}ms` }}
+            >
+              <span className="grid place-items-center h-4 w-4 rounded-sm bg-primary/15 text-primary text-[10px]">
+                ✓
               </span>
+              <span className="text-foreground/90">{item}</span>
             </div>
           ))}
-          <div className="flex gap-5 mt-3">
-            <span className="text-white/15 select-none">06</span>
-            <span className="inline-block w-2 h-4 align-middle bg-primary cursor-blink" />
-          </div>
+        </div>
+      </div>
+
+      {/* Connector */}
+      <div className="flex justify-center py-3">
+        <div className="h-6 w-px bg-gradient-to-b from-white/0 via-white/20 to-white/0" />
+      </div>
+
+      {/* Step 3 — Live */}
+      <div className="rounded-xl border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-white/[0.06] bg-white/[0.015]">
+          <span className="font-mono text-[10px] text-muted-foreground/70 uppercase tracking-[0.22em]">
+            Live
+          </span>
+          <span className="flex items-center gap-2 font-mono text-[10px] text-muted-foreground/60 uppercase tracking-[0.22em]">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 pulse-glow" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+            </span>
+            us-east · eu-west · ap-south
+          </span>
+        </div>
+        <div className="p-5 sm:p-6 flex items-center gap-3 font-mono text-[13px] sm:text-sm">
+          <span className="text-muted-foreground/60">https://</span>
+          <span className="text-foreground">customer-intelligence.app</span>
         </div>
       </div>
     </div>
