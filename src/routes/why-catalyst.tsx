@@ -5,7 +5,7 @@ export const Route = createFileRoute("/why-catalyst")({
   head: () => ({
     meta: [
       { title: "Why Catalyst — What Makes Us Different" },
-      { name: "description", content: "The things no other cloud platform can say. Zero learning curve, prompt-first, MCP-native, truly full-stack." },
+      { name: "description", content: "What no competitor can copy. Zero learning curve, prompt-first, MCP-native, truly full-stack." },
       { property: "og:title", content: "Why Catalyst — What Makes Us Different" },
       { property: "og:description", content: "The things no other cloud platform can say." },
     ],
