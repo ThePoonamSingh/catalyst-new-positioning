@@ -481,8 +481,7 @@ function FoldThree() {
             <Reveal key={l.n} delay={i * 70}>
               <div className="group glass rounded-2xl p-6 h-full relative overflow-hidden hover:bg-white/[0.05] transition">
                 <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-cta-gradient opacity-0 group-hover:opacity-20 blur-2xl transition" />
-                <div className="flex items-baseline justify-between">
-                  <span className="font-mono text-xs tracking-widest text-muted-foreground">LAYER {l.n}</span>
+                <div className="flex items-baseline justify-end">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition" />
                 </div>
                 <h3 className="mt-6 text-2xl font-semibold tracking-tight">{l.t}</h3>
