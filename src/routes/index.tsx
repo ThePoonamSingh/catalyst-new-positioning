@@ -91,9 +91,9 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground border border-white/10 bg-white/[0.03] backdrop-blur-sm px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
               <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-              The Agent-Ready Infrastructure
+              Prompt-first · Agent-ready · MCP-native · Production-grade
             </span>
           </div>
         </Reveal>
@@ -109,11 +109,6 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={160}>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-lg sm:text-xl text-muted-foreground font-light leading-relaxed">
-            Developer-native <span className="mx-2 text-white/15">/</span>
-            Agent-ready <span className="mx-2 text-white/15">/</span>
-            Production-grade
-          </p>
           <p className="mx-auto mt-6 max-w-2xl text-center text-base text-muted-foreground/80 leading-relaxed">
             AI can write code. It still can't ship a finished product. Catalyst closes the gap between what your agents
             generate and what actually runs in production — databases, auth, workflows, deployment, observability.
