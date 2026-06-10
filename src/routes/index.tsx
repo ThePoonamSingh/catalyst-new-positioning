@@ -555,53 +555,6 @@ function FoldFour() {
   );
 }
 
-/* ---------- Fold 5: Stack column ---------- */
-function FoldFive() {
-  const stack = ["Frontend", "Backend", "Data", "AI", "Workflows", "Deployment"];
-  return (
-    <section className="relative py-28 sm:py-36 border-t border-border/60">
-      <div className="mx-auto max-w-7xl px-6 flex justify-center">
-        <Reveal delay={120}>
-          <div className="relative w-full max-w-lg">
-            <div className="absolute inset-0 bg-cta-gradient opacity-20 blur-3xl rounded-full" />
-            <div className="relative space-y-3">
-              {stack.map((s, i) => (
-                <div key={s} className="flex flex-col items-center">
-                  <div
-                    className="glass-strong w-full max-w-md rounded-xl px-5 py-4 flex items-center justify-between float-slow"
-                    style={{ animationDelay: `${i * 0.4}s` }}
-                  >
-                    <span className="font-medium">{s}</span>
-                    <span className="font-mono text-xs text-muted-foreground">layer.{String(i + 1).padStart(2, "0")}</span>
-                  </div>
-                  {i < stack.length - 1 && (
-                    <svg width="20" height="22" viewBox="0 0 20 22" className="my-1">
-                      <path d="M10 0 V18" stroke="url(#g2)" strokeWidth="1.4" className="flow-dash" />
-                      <path d="M5 14 L10 20 L15 14" stroke="url(#g2)" strokeWidth="1.4" fill="none" />
-                      <defs>
-                        <linearGradient id="g2" x1="0" x2="0" y1="0" y2="22">
-                          <stop offset="0" stopColor="oklch(0.78 0.16 168)" />
-                          <stop offset="1" stopColor="oklch(0.66 0.21 295)" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  )}
-                </div>
-              ))}
-              <div className="pt-2 flex justify-center">
-                <div className="px-5 py-3 rounded-xl bg-cta-gradient text-background font-semibold ring-glow-emerald">
-                  Catalyst Core
-                </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- Final CTA ---------- */
 function FinalCTA() {
   return (
     <section id="cta" className="relative py-28 sm:py-36 border-t border-border/60 overflow-hidden">
