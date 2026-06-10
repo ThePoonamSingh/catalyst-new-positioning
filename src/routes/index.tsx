@@ -194,11 +194,11 @@ function Hero() {
         </Reveal>
 
         <Reveal delay={160}>
-          <div className="mx-auto mt-6 max-w-3xl text-center text-lg sm:text-xl text-foreground/90 leading-relaxed font-medium tracking-[-0.01em] space-y-5">
-            <p>
+          <div className="mx-auto mt-6 max-w-3xl space-y-6 text-center">
+            <p className="text-xl sm:text-2xl text-foreground leading-snug font-semibold tracking-[-0.015em]">
               AI can write code. It still can't ship a finished product. Catalyst closes the gap between what your AI generates and what actually runs in production—backend, data, auth, workflows, deployment, and observability.
             </p>
-            <p>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-normal tracking-normal">
               Code it yourself or prompt what you're building. The AI figures out the rest. It selects the right components, wires them, and provisions everything. The AI already knows the platform so you never have to worry about learning a new one.
             </p>
           </div>
