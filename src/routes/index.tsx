@@ -109,11 +109,8 @@ function Hero() {
 
         <Reveal delay={80}>
           <h1 className="mt-10 text-center font-display font-extrabold tracking-[-0.045em] text-[clamp(2.75rem,8.5vw,6.5rem)] leading-[1.02] text-foreground">
-            Everything from
-            <br />
-            <span className="bg-clip-text text-transparent bg-[linear-gradient(90deg,var(--purple)_0%,var(--emerald)_100%)]">
-              Prompt to Production
-            </span>
+            The Agent-Ready
+            <br />Full-Stack Cloud.
           </h1>
         </Reveal>
 
