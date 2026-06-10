@@ -55,7 +55,7 @@ function WhyCatalystPage() {
               What makes Catalyst different
             </div>
             <h1 className="mt-4 font-black tracking-[-0.04em] text-[clamp(2.5rem,6vw,4.5rem)] leading-[1] max-w-4xl">
-              The things no other cloud platform can say.
+              What no competitor can copy.
             </h1>
           </Reveal>
           <Reveal delay={120}>
