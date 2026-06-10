@@ -84,22 +84,65 @@ function Nav() {
 }
 
 /* ---------- Hero ---------- */
+function ScrollSyncedPill() {
+  const items = [
+    { label: "Prompt-first", id: "prompt" },
+    { label: "Agent-ready", id: "agents" },
+    { label: "MCP-native", id: "stack" },
+    { label: "Production-grade", id: "why" },
+  ];
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const sections = items
+      .map((it) => document.getElementById(it.id))
+      .filter((el): el is HTMLElement => !!el);
+    if (sections.length === 0) return;
+
+    const onScroll = () => {
+      const probe = window.innerHeight * 0.35;
+      let current = 0;
+      sections.forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= probe) current = i;
+      });
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
+      <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
+      {items.map((it, i) => (
+        <span key={it.label} className="flex items-center gap-3">
+          {i > 0 && <span className="text-white/15">·</span>}
+          <span
+            className="transition-all duration-500"
+            style={
+              active === i
+                ? { color: "oklch(0.99 0.005 250)", textShadow: "0 0 12px var(--accent)" }
+                : { color: "oklch(0.55 0.03 265)" }
+            }
+          >
+            {it.label}
+          </span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function Hero() {
   return (
-    <section className="relative bg-hero">
+    <section id="prompt" className="relative bg-hero">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-              {["Prompt-first", "Agent-ready", "MCP-native", "Production-grade"].map((t, i) => (
-                <span key={t} className="flex items-center gap-3">
-                  {i > 0 && <span className="text-white/15">·</span>}
-                  <span className="pill-rotate" style={{ animationDelay: `${i * 0.5}s` }}>{t}</span>
-                </span>
-              ))}
-            </span>
+            <ScrollSyncedPill />
           </div>
         </Reveal>
 
