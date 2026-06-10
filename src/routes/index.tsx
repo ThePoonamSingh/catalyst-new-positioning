@@ -128,11 +128,12 @@ export function Nav() {
             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/10 py-2 px-1 min-w-[10rem]">
                 {[
-                  { label: "Featured", href: "https://catalyst.zoho.com/" },
-                  { label: "AI/ML", href: "https://catalyst.zoho.com/" },
-                  { label: "Serverless", href: "https://catalyst.zoho.com/" },
-                  { label: "Backend", href: "https://catalyst.zoho.com/" },
-                  { label: "DevOps", href: "https://catalyst.zoho.com/" },
+                  { label: "Why Catalyst", href: "https://catalyst.zoho.com/why-catalyst.html" },
+                  { label: "Platform", href: "https://catalyst.zoho.com/platform.html" },
+                  { label: "Solutions", href: "https://catalyst.zoho.com/solutions.html" },
+                  { label: "Customers", href: "https://catalyst.zoho.com/customers.html" },
+                  { label: "Pricing", href: "https://catalyst.zoho.com/pricing.html" },
+                  { label: "Resources", href: "https://catalyst.zoho.com/resources.html" },
                 ].map((item) => (
                   <a
                     key={item.label}
