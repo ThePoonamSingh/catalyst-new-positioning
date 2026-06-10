@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -20,7 +21,6 @@ function Index() {
       <Hero />
       <FoldTwo />
       <FoldThree />
-      <FoldFour />
       <FinalCTA />
       <Footer />
     </main>
@@ -28,7 +28,7 @@ function Index() {
 }
 
 /* ---------- Reveal on scroll ---------- */
-function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+export function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -56,20 +56,19 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 }
 
 /* ---------- Nav ---------- */
-function Nav() {
+export function Nav() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border/60">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
+        <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
           <span className="h-7 w-7 rounded-md bg-cta-gradient ring-glow-emerald grid place-items-center text-[11px] font-black text-background">C</span>
           <span className="text-foreground">Catalyst</span>
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#platform" className="hover:text-foreground transition">Platform</a>
-          <a href="#agents" className="hover:text-foreground transition">Agents</a>
-          <a href="#stack" className="hover:text-foreground transition">Stack</a>
-          <a href="#why" className="hover:text-foreground transition">Why Catalyst</a>
-          <a href="#docs" className="hover:text-foreground transition">Docs</a>
+          <Link to="/platform" className="hover:text-foreground transition">Platform</Link>
+          <a href="/#agents" className="hover:text-foreground transition">Agents</a>
+          <a href="/#stack" className="hover:text-foreground transition">Stack</a>
+          <a href="/#docs" className="hover:text-foreground transition">Docs</a>
         </nav>
         <div className="flex items-center gap-3">
           <a href="#" className="hidden sm:inline text-sm text-muted-foreground hover:text-foreground transition">Sign in</a>
