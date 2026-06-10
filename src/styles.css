@@ -275,3 +275,12 @@
   from { width: 0; }
   to { width: 100%; }
 }
+
+@keyframes pill-rotate {
+  0%, 100% { color: oklch(0.70 0.03 265); text-shadow: none; }
+  12% { color: oklch(0.99 0.005 250); text-shadow: 0 0 12px var(--accent); }
+}
+.pill-rotate {
+  color: oklch(0.70 0.03 265);
+  animation: pill-rotate 2s ease-in-out infinite;
+}
