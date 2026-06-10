@@ -78,6 +78,15 @@ export function Nav() {
                 >
                   <span>Why Catalyst</span>
                 </Link>
+                <a
+                  href="https://writer.zoho.in/writer/open/wue3r4d9c70e11c844d218704ac4fec179b30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
+                >
+                  <span>Zero bandwidth fees</span>
+                  <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </a>
               </div>
             </div>
           </div>
