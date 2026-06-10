@@ -284,11 +284,3 @@
   color: oklch(0.70 0.03 265);
   animation: pill-rotate 2s ease-in-out infinite;
 }
-
-@keyframes revolve-glow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.animate-revolve-glow {
-  animation: revolve-glow 4s linear infinite;
-}
