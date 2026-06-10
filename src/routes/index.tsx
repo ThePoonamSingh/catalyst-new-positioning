@@ -91,9 +91,9 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground border border-white/10 bg-white/[0.03] backdrop-blur-sm px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
               <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-              The Agent-Ready Infrastructure
+              Prompt-first · Agent-ready · MCP-native · Production-grade
             </span>
           </div>
         </Reveal>
