@@ -549,9 +549,9 @@ function FinalCTA() {
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <Reveal>
           <h2 className="font-black tracking-[-0.04em] text-[clamp(2.5rem,7vw,5rem)] leading-[0.98]">
-            Stop Building Infrastructure.
+            Stop wiring.
             <br />
-            <span className="text-gradient-emerald">Start Building Products.</span>
+            <span className="text-gradient-emerald">Start shipping.</span>
           </h2>
         </Reveal>
         <Reveal delay={120}>
