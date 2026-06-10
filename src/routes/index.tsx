@@ -366,10 +366,7 @@ function FoldTwo() {
           ].map((c, i) => (
             <Reveal key={c.t} delay={i * 80}>
               <div className="glass rounded-2xl p-6 h-full hover:bg-white/[0.05] transition group">
-                <div className="h-10 w-10 rounded-lg bg-primary/15 text-primary grid place-items-center text-sm font-mono group-hover:ring-glow-emerald transition">
-                  {c.t.slice(0, 2).toUpperCase()}
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{c.t}</h3>
+                <h3 className="text-lg font-semibold">{c.t}</h3>
                 <p className="text-sm text-primary/80 mt-1">{c.s}</p>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
               </div>
