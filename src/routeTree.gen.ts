@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhyCatalystRouteImport } from './routes/why-catalyst'
 import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WhyCatalystRoute = WhyCatalystRouteImport.update({
+  id: '/why-catalyst',
+  path: '/why-catalyst',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlatformRoute = PlatformRouteImport.update({
   id: '/platform',
   path: '/platform',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/platform': typeof PlatformRoute
+  '/why-catalyst': typeof WhyCatalystRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/platform': typeof PlatformRoute
+  '/why-catalyst': typeof WhyCatalystRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/platform': typeof PlatformRoute
+  '/why-catalyst': typeof WhyCatalystRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/platform'
+  fullPaths: '/' | '/platform' | '/why-catalyst'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/platform'
-  id: '__root__' | '/' | '/platform'
+  to: '/' | '/platform' | '/why-catalyst'
+  id: '__root__' | '/' | '/platform' | '/why-catalyst'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PlatformRoute: typeof PlatformRoute
+  WhyCatalystRoute: typeof WhyCatalystRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/why-catalyst': {
+      id: '/why-catalyst'
+      path: '/why-catalyst'
+      fullPath: '/why-catalyst'
+      preLoaderRoute: typeof WhyCatalystRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/platform': {
       id: '/platform'
       path: '/platform'
@@ -71,7 +88,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PlatformRoute: PlatformRoute,
+  WhyCatalystRoute: WhyCatalystRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
