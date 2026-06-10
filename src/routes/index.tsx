@@ -103,7 +103,7 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
           <div className="flex justify-center">
-            <ScrollSyncedPill />
+            <EyebrowPill />
           </div>
         </Reveal>
 
