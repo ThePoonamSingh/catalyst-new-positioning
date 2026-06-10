@@ -91,9 +91,14 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-24 pb-28 sm:pt-32">
         <Reveal>
           <div className="flex justify-center">
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
+            <span className="inline-flex items-center gap-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] border border-white/10 bg-white/[0.03] backdrop-blur-sm px-4 py-1.5 rounded-full">
               <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
-              Prompt-first · Agent-ready · MCP-native · Production-grade
+              {["Prompt-first", "Agent-ready", "MCP-native", "Production-grade"].map((t, i) => (
+                <span key={t} className="flex items-center gap-3">
+                  {i > 0 && <span className="text-white/15">·</span>}
+                  <span className="pill-rotate" style={{ animationDelay: `${i * 0.5}s` }}>{t}</span>
+                </span>
+              ))}
             </span>
           </div>
         </Reveal>
