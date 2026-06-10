@@ -63,46 +63,49 @@
 
 :root {
   --radius: 0.875rem;
-  /* Catalyst — dark by default */
-  --background: oklch(0.16 0.012 260);
-  --foreground: oklch(0.97 0.005 250);
-  --card: oklch(0.21 0.014 260);
-  --card-foreground: oklch(0.97 0.005 250);
-  --popover: oklch(0.19 0.014 260);
-  --popover-foreground: oklch(0.97 0.005 250);
-  --primary: oklch(0.78 0.16 168);
-  --primary-foreground: oklch(0.16 0.02 200);
-  --secondary: oklch(0.26 0.02 260);
-  --secondary-foreground: oklch(0.97 0.005 250);
-  --muted: oklch(0.24 0.015 260);
-  --muted-foreground: oklch(0.68 0.018 260);
-  --accent: oklch(0.66 0.21 295);
-  --accent-foreground: oklch(0.98 0.005 250);
+  /* Catalyst — agent-era dark, brand: deep indigo + crimson */
+  --background: oklch(0.14 0.03 270);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.19 0.04 270);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.17 0.04 270);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.63 0.23 25);              /* Catalyst crimson */
+  --primary-foreground: oklch(0.99 0.005 250);
+  --secondary: oklch(0.26 0.06 270);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.22 0.04 270);
+  --muted-foreground: oklch(0.70 0.03 265);
+  --accent: oklch(0.55 0.21 275);              /* Catalyst indigo */
+  --accent-foreground: oklch(0.99 0.005 250);
   --destructive: oklch(0.62 0.23 25);
   --destructive-foreground: oklch(0.98 0.005 250);
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.78 0.16 168);
+  --ring: oklch(0.63 0.23 25);
 
-  /* Brand tokens */
-  --emerald: oklch(0.78 0.16 168);
-  --emerald-glow: oklch(0.85 0.18 162);
-  --teal: oklch(0.74 0.13 195);
-  --purple: oklch(0.66 0.21 295);
-  --purple-glow: oklch(0.74 0.22 305);
-  --ink: oklch(0.12 0.012 260);
+  /* Brand tokens (legacy names kept for compatibility) */
+  --emerald: oklch(0.55 0.21 275);             /* now indigo */
+  --emerald-glow: oklch(0.64 0.22 278);
+  --teal: oklch(0.45 0.18 280);
+  --purple: oklch(0.63 0.23 25);               /* now crimson */
+  --purple-glow: oklch(0.72 0.22 28);
+  --ink: oklch(0.10 0.02 270);
 
-  --gradient-prompt: linear-gradient(135deg, oklch(0.66 0.21 295) 0%, oklch(0.62 0.22 320) 100%);
-  --gradient-agent: linear-gradient(135deg, oklch(0.78 0.16 168) 0%, oklch(0.74 0.13 195) 100%);
-  --gradient-hero: radial-gradient(1200px 600px at 50% -10%, oklch(0.66 0.21 295 / 0.35), transparent 60%),
-                   radial-gradient(900px 500px at 80% 20%, oklch(0.78 0.16 168 / 0.18), transparent 60%),
-                   linear-gradient(180deg, oklch(0.16 0.012 260) 0%, oklch(0.12 0.012 260) 100%);
-  --gradient-text: linear-gradient(180deg, oklch(0.99 0 0) 0%, oklch(0.72 0.04 260) 100%);
-  --gradient-cta: linear-gradient(135deg, oklch(0.78 0.16 168), oklch(0.66 0.21 295));
+  --gradient-prompt: linear-gradient(135deg, oklch(0.63 0.23 25) 0%, oklch(0.55 0.24 10) 100%);
+  --gradient-agent: linear-gradient(135deg, oklch(0.55 0.21 275) 0%, oklch(0.45 0.18 280) 100%);
+  --gradient-hero:
+    radial-gradient(1200px 600px at 50% -10%, oklch(0.55 0.21 275 / 0.45), transparent 60%),
+    radial-gradient(900px 500px at 85% 15%, oklch(0.63 0.23 25 / 0.30), transparent 60%),
+    radial-gradient(700px 500px at 10% 40%, oklch(0.45 0.18 280 / 0.25), transparent 65%),
+    linear-gradient(180deg, oklch(0.14 0.03 270) 0%, oklch(0.10 0.02 270) 100%);
+  --gradient-text: linear-gradient(180deg, oklch(0.99 0 0) 0%, oklch(0.74 0.05 270) 100%);
+  --gradient-cta: linear-gradient(135deg, oklch(0.55 0.21 275) 0%, oklch(0.63 0.23 25) 100%);
+  --gradient-brand: linear-gradient(90deg, oklch(0.45 0.18 280), oklch(0.55 0.21 275) 45%, oklch(0.63 0.23 25));
 
-  --shadow-glow-emerald: 0 0 80px -10px oklch(0.78 0.16 168 / 0.45);
-  --shadow-glow-purple: 0 0 80px -10px oklch(0.66 0.21 295 / 0.45);
-  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.06) inset, 0 30px 60px -20px oklch(0 0 0 / 0.6);
+  --shadow-glow-emerald: 0 0 80px -10px oklch(0.55 0.21 275 / 0.55);
+  --shadow-glow-purple: 0 0 80px -10px oklch(0.63 0.23 25 / 0.50);
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.06) inset, 0 30px 60px -20px oklch(0 0 0 / 0.7);
 
   --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
@@ -174,7 +177,7 @@
   }
 
   ::selection {
-    background: oklch(0.78 0.16 168 / 0.35);
+    background: oklch(0.63 0.23 25 / 0.40);
     color: var(--color-foreground);
   }
 }
