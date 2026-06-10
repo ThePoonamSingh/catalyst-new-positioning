@@ -103,7 +103,7 @@ export function Nav() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
                 >
-                  <span>Agent skills</span>
+                  <span>Agent Skills</span>
                   <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                 </a>
                 <a
