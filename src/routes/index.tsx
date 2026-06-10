@@ -74,7 +74,7 @@ export function Nav() {
             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
               <div className="rounded-lg border border-border/60 bg-background/95 backdrop-blur-xl shadow-lg shadow-black/10 py-2 px-1 min-w-[10rem]">
                 <a
-                  href="https://github.com/catalystbyzoho/agent-skills/actions"
+                  href="https://github.com/catalystbyzoho/agent-skills"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 transition"
