@@ -490,7 +490,6 @@ function FoldTwo() {
 }
 
 function Terminal() {
-function Terminal() {
   const events = [
     { kind: "thought", text: "User wants a support platform. Need data, auth, ticket workflow, and an inbox UI." },
     { kind: "tool", name: "catalyst.db.create_table", args: "tickets { id, subject, status, priority }", result: "ok · table live" },
