@@ -490,23 +490,24 @@ function FoldTwo() {
 }
 
 function Terminal() {
-  const lines = [
-    "Creating backend",
-    "Provisioning database",
-    "Configuring auth",
-    "Generating workflows",
-    "Deploying globally",
-  ];
+function Terminal() {
+  const events = [
+    { kind: "thought", text: "User wants a support platform. Need data, auth, ticket workflow, and an inbox UI." },
+    { kind: "tool", name: "catalyst.db.create_table", args: "tickets { id, subject, status, priority }", result: "ok · table live" },
+    { kind: "tool", name: "catalyst.auth.enable", args: "providers: email, google", result: "ok · 2 providers configured" },
+    { kind: "tool", name: "catalyst.workflows.deploy", args: "on_ticket_created → triage → notify", result: "ok · workflow v1 live" },
+    { kind: "tool", name: "catalyst.functions.deploy", args: "POST /api/tickets", result: "ok · endpoint live" },
+    { kind: "thought", text: "Stack assembled. Smoke-testing the inbox endpoint." },
+    { kind: "tool", name: "catalyst.deploy", args: "region: auto", result: "ok · https://support.catalyst.app" },
+  ] as const;
   const [step, setStep] = useState(-1);
   useEffect(() => {
     let i = -1;
     const id = setInterval(() => {
       i++;
-      if (i > lines.length) {
-        i = -1;
-      }
+      if (i > events.length + 1) i = -1;
       setStep(i);
-    }, 700);
+    }, 900);
     return () => clearInterval(id);
   }, []);
 
@@ -516,33 +517,51 @@ function Terminal() {
         <span className="h-3 w-3 rounded-full bg-[oklch(0.7_0.18_25)]" />
         <span className="h-3 w-3 rounded-full bg-[oklch(0.82_0.16_85)]" />
         <span className="h-3 w-3 rounded-full bg-[oklch(0.78_0.16_145)]" />
-        <span className="ml-3 text-xs font-mono text-muted-foreground">catalyst — zsh</span>
+        <span className="ml-3 text-xs font-mono text-muted-foreground">agent session · mcp://catalyst</span>
+        <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.2em] text-primary/80">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-glow" />
+          autonomous
+        </span>
       </div>
-      <div className="p-6 font-mono text-sm leading-7 bg-black/20 min-h-[360px]">
-        <div>
-          <span className="text-primary">{">"}</span>{" "}
-          <span className="text-foreground">Build a customer support platform</span>
+      <div className="p-6 font-mono text-[13px] leading-6 bg-black/20 min-h-[420px]">
+        <div className="flex items-start gap-2">
+          <span className="text-[10px] mt-1 px-1.5 py-0.5 rounded bg-accent/15 text-accent uppercase tracking-[0.18em]">user</span>
+          <span className="text-foreground">Build a customer support platform.</span>
         </div>
-        <div className="mt-3 space-y-1.5">
-          {lines.map((l, i) => (
-            <div key={l} className="flex items-center gap-3 transition" style={{ opacity: step >= i ? 1 : 0.25 }}>
-              <span className={step >= i ? "text-primary" : "text-muted-foreground"}>
-                {step > i ? "✓" : step === i ? "…" : "·"}
-              </span>
-              <span className={step >= i ? "text-foreground" : "text-muted-foreground"}>{l}</span>
-            </div>
-          ))}
+
+        <div className="mt-4 space-y-2.5">
+          {events.map((e, i) => {
+            const active = step >= i;
+            if (e.kind === "thought") {
+              return (
+                <div key={i} className="flex items-start gap-2 transition" style={{ opacity: active ? 1 : 0.2 }}>
+                  <span className="text-[10px] mt-1 px-1.5 py-0.5 rounded bg-primary/15 text-primary uppercase tracking-[0.18em]">agent</span>
+                  <span className="text-muted-foreground italic">{e.text}</span>
+                </div>
+              );
+            }
+            return (
+              <div key={i} className="rounded-md border border-border/60 bg-background/40 px-3 py-2 transition" style={{ opacity: active ? 1 : 0.2 }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent/10 text-accent/90 uppercase tracking-[0.18em]">tool</span>
+                  <span className="text-foreground">{e.name}</span>
+                  <span className="ml-auto text-[10px] text-muted-foreground/70">{step > i ? "200" : step === i ? "…" : "—"}</span>
+                </div>
+                <div className="mt-1 pl-2 border-l border-border/60 text-muted-foreground truncate">{e.args}</div>
+                {step > i && (
+                  <div className="mt-1 pl-2 text-primary/90">↳ {e.result}</div>
+                )}
+              </div>
+            );
+          })}
         </div>
-        {step >= lines.length && (
-          <div className="mt-5 inline-flex items-center gap-2 text-foreground">
+
+        {step > events.length && (
+          <div className="mt-5 flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-primary pulse-glow" />
-            <span className="text-gradient-emerald font-semibold">Live in 24 seconds</span>
+            <span className="text-gradient-emerald font-semibold">Platform shipped · agent handed off in 24s</span>
           </div>
         )}
-        <div className="mt-4">
-          <span className="text-primary">{">"}</span>
-          <span className="cursor-blink ml-2 inline-block w-2 h-4 align-middle bg-primary" />
-        </div>
       </div>
     </div>
   );
